@@ -36,6 +36,7 @@ namespace ScheduleDemo_1746
             {
                 Console.WriteLine("請輸入指定時間（HH:mm:ss）：");
                 string inputTime = Console.ReadLine();  // 讀取使用者輸入的時間
+
                 DateTime currentDateTime = DateTime.Now;  // 取當下時間
                 string RunTimeString = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");  
 
@@ -44,8 +45,8 @@ namespace ScheduleDemo_1746
                 {
                     Console.WriteLine($"你輸入的指定時間是：{specificTime}");
 
-                    // Convert the string RunTime to DateTime
-                    DateTime RunTime = DateTime.Parse(RunTimeString);  // Convert to DateTime
+                
+                    DateTime RunTime = DateTime.Parse(RunTimeString); 
 
                     // 設定間隔排程
                     var intervalJob = JobBuilder.Create<PrintSeconds>()  // 使用自定義的 PrintSeconds
